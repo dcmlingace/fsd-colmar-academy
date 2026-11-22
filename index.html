@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- TODO -->
@@ -12,8 +13,9 @@
     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
+
 <body class="container">
-    
+
     <!-- TODO -->
     <!-- 1. Start of Navbar -->
     <nav>
@@ -32,6 +34,15 @@
 
     <!-- End of Navbar -->
 
+    <!-- TODO -->
+    <!-- Start of Navbar for mobile -->
+    <nav id="nav-mobile">
+        <a href="#"><img src="assets/images/ic-logo.svg" alt="Mobile Logo Home"></a>
+        <a href="#"><img src="assets/images/ic-on-campus.svg" alt="Mobile Logo Campus"></a>
+        <a href="#"><img src="assets/images/ic-online.svg" alt="Mobile Logo Online"></a>
+        <a href="#"><img src="assets/images/ic-login.svg" alt="Mobile Logo Login"></a>
+    </nav>
+    <!-- End of Navbar for mobile -->
 
     <!-- TODO -->
     <!-- 2.  Start of header -->
@@ -40,7 +51,7 @@
     </header>
     <header>
         <div>
-            <h1>Learn something new today</h1>
+            <h1>Learn something new everyday</h1>
             <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
             <a href="#">Start here</a>
         </div>
@@ -56,25 +67,29 @@
             <img src="assets/images/information-main.jpg" alt="">
         </div>
         <div class="practice-text">
-            <h1>It doesn't hurt to keep practising</h1>
+            <h1>It doesn't hurt to keep practicing</h1>
             <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quaerat voluptates, aspernatur reiciendis dolore eligendi veniam enim nulla temporibus maxime. Repudiandae provident quis reiciendis incidunt, quia eum quaerat delectus nostrum possimus perferendis temporibus repellat. Harum, temporibus." 
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusamus enim perspiciatis culpa!
+                Sapiente, consequuntur iusto nobis dolore quis vitae culpa vero laboriosam vel eligendi voluptate
+                molestias temporibus odio non a delectus. Rem maiores eius voluptatem."
                 <span>Emmanuel, Sr Strategist at Hiring.com</span>
-            </p>        
-            </div>
+            </p>
+        </div>
     </section>
-
     <!-- End of practice -->
 
+
     <!-- TODO -->
-         <!-- 3.1. Start of events -->
+    <!-- 3.1. Start of events -->
     <section class="events">
-        
+
         <!-- Start of event block -->
         <div class="events-block">
-            
+
             <img src="assets/images/information-orientation.jpg" alt="Event Orientation">
-            
+            <img class="events-img-mobile" src="assets/images/information-orientation-mobile.jpg"
+                alt="Event Orientation">
+
             <div class="events-text">
                 <h3>Orientation Date</h3>
                 <p>Tue 10/11 & Wed 10/12 8am-3pm</p>
@@ -83,12 +98,13 @@
 
         </div>
         <!-- End of block -->
-        
+
         <!-- Start of event block -->
         <div class="events-block">
-            
+
             <img src="assets/images/information-campus.jpg" alt="Event Campus">
-            
+            <img class="events-img-mobile" src="assets/images/information-campus-mobile.jpg" alt="Event Campus">
+
             <div class="events-text">
                 <h3>Our Campus</h3>
                 <p>Find which campus is close to you</p>
@@ -97,12 +113,14 @@
 
         </div>
         <!-- End of block -->
-         
+
         <!-- Start of event block -->
         <div class="events-block">
-            
+
             <img src="assets/images/information-guest-lecture.jpg" alt="Event Guest Lecture">
-            
+            <img class="events-img-mobile" src="assets/images/information-guest-lecture-mobile.jpg"
+                alt="Event Guest Lecture">
+
             <div class="events-text">
                 <h3>Our Guest Lecture</h3>
                 <p>Join a keynote with Oliver Sack about music in medical treatment</p>
@@ -115,9 +133,138 @@
     </section>
 
     <!-- End of events -->
- 
 
-        <footer>
+    <!-- TODO -->
+    <!-- 4. Start of learning -->
+    <section class="lt-learning">
+        <h1 class="lt-title">Start learning</h1>
+
+        <div class="lt-learning__grid">
+
+            <!-- Start of course block -->
+            <article class="lt-card">
+                <img class="lt-card__img" src="assets/images/course-software.jpg" alt="Software Engineering Course">
+                <div class="lt-card__body">
+                    <h3 class="lt-card__title">Software engineering</h3>
+                    <span class="lt-card__type">COURSES</span>
+                    <p class="lt-card__desc">Web Development, Mobile Development, IoT, APIs</p>
+                </div>
+            </article>
+            <!-- End of course block -->
+
+            <!-- Start of course block -->
+            <article class="lt-card">
+                <img class="lt-card__img" src="assets/images/course-computer-art.jpg" alt="Computer Art Course">
+                <div class="lt-card__body">
+                    <h3 class="lt-card__title">Computer art</h3>
+                    <span class="lt-card__type">COURSES</span>
+                    <p class="lt-card__desc">Imaging &amp; Design, Web Design, Motion Graphics &amp; Visual Effects,
+                        Computer Animation</p>
+                </div>
+            </article>
+            <!-- End of course block -->
+
+            <!-- Start of course block -->
+            <article class="lt-card">
+                <img class="lt-card__img" src="assets/images/course-design.jpg" alt="Design Course">
+                <div class="lt-card__body">
+                    <h3 class="lt-card__title">Design</h3>
+                    <span class="lt-card__type">COURSES</span>
+                    <p class="lt-card__desc">User Experience Design, User Research, Visual Design</p>
+                </div>
+            </article>
+            <!-- End of course block -->
+
+            <!-- Start of course block -->
+            <article class="lt-card">
+                <img class="lt-card__img" src="assets/images/course-data.jpg" alt="Data Course">
+                <div class="lt-card__body">
+                    <h3 class="lt-card__title">Data</h3>
+                    <span class="lt-card__type">COURSES</span>
+                    <p class="lt-card__desc">Data Science, Big Data, SQL, Data Visualization</p>
+                </div>
+            </article>
+            <!-- End of course block -->
+
+            <!-- Start of course block -->
+            <article class="lt-card">
+                <img class="lt-card__img" src="assets/images/course-business.jpg" alt="Business Course">
+                <div class="lt-card__body">
+                    <h3 class="lt-card__title">Business</h3>
+                    <span class="lt-card__type">COURSES</span>
+                    <p class="lt-card__desc">Product Development, Business Development, Startup</p>
+                </div>
+            </article>
+            <!-- End of course block -->
+
+            <!-- Start of course block -->
+            <article class="lt-card">
+                <img class="lt-card__img" src="assets/images/course-marketing.jpg" alt="Marketing Course">
+                <div class="lt-card__body">
+                    <h3 class="lt-card__title">Marketing</h3>
+                    <span class="lt-card__type">COURSES</span>
+                    <p class="lt-card__desc">Analytics, Content Marketing, Mobile Marketing</p>
+                </div>
+            </article>
+            <!-- End of course block -->
+
+        </div>
+    </section>
+    <!-- End of learning -->
+
+
+    <!-- TODO -->
+    <!-- 5. Start of thesis -->
+    <section class="lt-thesis">
+        <!-- The "s" shows on mobile only ("Thesis exhibits"), as in the spec -->
+        <h1 class="lt-title">Thesis exhibit<span class="lt-title__mobile-s">s</span></h1>
+
+        <div class="lt-thesis__layout">
+
+            <!-- Main video: 60% on desktop, full width on mobile -->
+            <div class="lt-thesis__main">
+                <video class="lt-thesis__video" controls>
+                    <source src="assets/videos/thesis.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="lt-thesis__caption">
+                    <h3 class="lt-thesis__caption-title">Reimagine urban</h3>
+                    <p class="lt-thesis__caption-text">
+                        &ldquo;Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec
+                        consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet,
+                        efficitur dolor consequat, tristique ligula.&rdquo;
+                    </p>
+                </div>
+            </div>
+
+            <!-- Side articles: 40% on desktop, hidden on mobile -->
+            <div class="lt-thesis__side">
+
+                <article class="lt-item lt-item--highlight">
+                    <img class="lt-item__img" src="assets/images/thesis-fisma.jpg" alt="Fisma Design and Prototype">
+                    <div class="lt-item__body">
+                        <h3 class="lt-item__title">Fisma: Design and Prototype</h3>
+                        <p class="lt-item__text">Designer showcase of new prototype product</p>
+                    </div>
+                </article>
+
+                <article class="lt-item">
+                    <img class="lt-item__img" src="assets/images/thesis-now-and-then.jpg" alt="Now and then">
+                    <div class="lt-item__body">
+                        <h3 class="lt-item__title">Now and then</h3>
+                        <p class="lt-item__text">Research study about New York</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End of thesis -->
+
+    <!-- TODO -->
+    <!-- 6. Start of footer -->
+    <footer>
         <p>
             &copy; 2026 Colmar Academy. All rights reserved.
         </p>
@@ -126,29 +273,9 @@
             <li><a href="#">Privacy</a></li>
         </ul>
     </footer>
-    
-    <!-- End of events -->
-
-
-    <!-- TODO -->
-    <!-- 4. Start of learning -->
-
-
-    <!-- End of learning -->
-
-
-    <!-- TODO -->
-    <!-- 5. Star of thesis -->
-
-
-    <!-- End of thesis -->
-
-
-    <!-- TODO -->
-    <!-- 6. Start of footer -->
-
 
     <!-- End of footer -->
 
 </body>
+
 </html>
