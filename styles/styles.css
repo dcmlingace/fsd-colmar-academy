@@ -28,6 +28,14 @@ a {
     display: grid;
     grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
     grid-template-rows: repeat(6, min-content);
+
+/* Force bottom sections to span the full width */
+.lt-learning,
+.lt-thesis,
+footer {
+    grid-column: full-start / full-end;
+}
+
 }
 
 /* ADDED NEW RULE */
@@ -42,11 +50,9 @@ footer {
 /** Start of Desktop Section **/
 /** ************************ **/
 
-/* Mobile icon bar: hidden on desktop (769px and wider) */
-@media (min-width: 769px) {
-
-    #nav-mobile,
-    body.container>#nav-mobile {
+/* Hide the mobile navigation on screens wider than 768px (Desktop) */
+@media screen and (min-width: 769px) {
+    #nav-mobile {
         display: none !important;
     }
 }
@@ -494,6 +500,17 @@ footer a {
 
 /** Start of Mobile Section **/
 /** *********************** **/
+
+/* Hide the desktop navigation on mobile */
+nav {
+    display: none;
+}
+
+/* Show the mobile navigation */
+#nav-mobile {
+    display: flex;
+    /* ... other mobile nav styles ... */
+}
 
 /* if the width of screen is 375px and and below (aka 23rem) */
 @media screen and (max-width: 23.4375rem) {
