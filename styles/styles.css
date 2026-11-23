@@ -27,10 +27,9 @@ a {
 .container {
     display: grid;
     grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
-    /* Removed fixed grid-template-rows so content flows naturally */
 }
 
-/* Force bottom sections AND the hero to span the full width */
+/* Force these sections to span the full width */
 nav,
 #nav-mobile,
 .hero,
