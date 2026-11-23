@@ -27,22 +27,35 @@ a {
 .container {
     display: grid;
     grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
-    grid-template-rows: repeat(6, min-content);
+    /* Removed fixed grid-template-rows so content flows naturally */
+}
 
-/* Force bottom sections to span the full width */
+/* Force bottom sections AND the hero to span the full width */
+nav,
+#nav-mobile,
+.hero,
 .lt-learning,
 .lt-thesis,
 footer {
     grid-column: full-start / full-end;
 }
 
+/* Set up the Hero 60/40 split */
+.hero {
+    display: flex;
+    background-color: #d8d8d8;
 }
 
-/* ADDED NEW RULE */
-.lt-learning,
-.lt-thesis,
-footer {
-    grid-column: full-start / full-end;
+.hero .imgcontainer {
+    width: 60%;
+}
+
+.hero .hero-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
 }
 
 /* TODO */
@@ -498,97 +511,64 @@ footer a {
 
 /* TODO */
 
-/** Start of Mobile Section **/
-/** *********************** **/
-
-/* Hide the desktop navigation on mobile */
-nav {
-    display: none;
-}
-
-/* Show the mobile navigation */
-#nav-mobile {
-    display: flex;
-    /* ... other mobile nav styles ... */
-}
-
-/* if the width of screen is 375px and and below (aka 23rem) */
-@media screen and (max-width: 23.4375rem) {
-
-    /* Update footer section */
-    footer>ul {
-        display: none;
-    }
-
-    footer>p {
-        white-space: nowrap;
-        font-size: small;
-    }
-}
-
-/* if the width of screen is 640px and below (aka 40rem x 16px) */
+/* ==========================================================
+   MOBILE SECTION
+   ========================================================== */
 @media screen and (max-width: 40rem) {
-
-    /* Hide desktop <nav> and hide the .practice section */
-    nav,
+    
+    /* Hide desktop nav and practice section */
+    nav:not(#nav-mobile), 
     .practice {
         display: none;
     }
 
-    /* Display nav-mobile */
+    /* Show mobile nav */
     #nav-mobile {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        grid-column: full-start / full-end;
         height: 4rem;
+        background-color: #fff;
     }
 
-    header {
-        display: grid;
-        grid-column: full-start / full-end;
+    /* Hero Mobile Layout */
+    .hero {
+        display: flex;
+        flex-direction: column;
     }
-
-    /* Update hero banner call-to-action */
-
-    .imgcontainer {
+    
+    .hero .imgcontainer,
+    .hero .hero-content {
+        width: 100%;
         padding: 0;
     }
 
-    header>div {
-        display: block;
-        width: auto;
-        height: auto;
+    .hero .hero-content {
         padding: 2rem 1rem;
     }
-
-    header div>h1 {
+    
+    .hero .hero-content h1 {
         padding-bottom: 2rem;
     }
 
-    header div>h2 {
+    .hero .hero-content h2 {
         padding-bottom: 1.5rem;
     }
 
-    header div>a {
-        margin-bottom: 2rem;
-    }
-
-    /* Update events section */
+    /* Events Mobile Layout */
     .events {
-        display: grid;
         grid-column: full-start / full-end;
         border-left: none;
     }
 
-    .events>.events-block {
+    .events > .events-block {
         display: flex;
         flex-direction: column;
-        padding: 4rem 1rem 0 1rem;
+        padding: 1rem;
         border: none;
     }
 
-    .events img {
+    .events img:not(.events-img-mobile) {
         display: none;
     }
 
@@ -598,118 +578,69 @@ nav {
         height: auto;
     }
 
-    .events>.events-block {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 1rem 0 1rem;
-        border: none;
-    }
-
-    .events .events-block:first-child {
-        padding-top: 1rem;
-    }
-
-    .events .events-block:last-child {
-        padding-bottom: 2rem;
-    }
-
-
     .events .events-text {
-        display: flex;
-        flex-direction: column;
         width: 100%;
-        height: 5rem;
-        margin-left: 1rem;
-        justify-content: space-evenly;
+        margin-left: 0;
+        margin-top: 1rem;
     }
 
-    .events .events-text>h3 {
-        padding-top: 1rem;
+    /* Start Learning Mobile (Gray Bars) */
+    .lt-title {
+        font-size: 2rem;
+        margin-bottom: 16px;
     }
 
-    /* Start learning: compact list of titles */
-    @media (max-width: 768px) {
-
-        .lt-title {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            /* 16px below heading */
-        }
-
-        .lt-title__mobile-s {
-            display: inline;
-        }
-
-        /* Start learning: title-only gray bars */
-        .lt-learning {
-            padding: 32px 16px;
-        }
-
-        .lt-learning__grid {
-            grid-template-columns: 1fr;
-            gap: 8px;
-            /* 8px between bars */
-        }
-
-        .lt-card {
-            background-color: #d8d8d8;
-        }
-
-        .lt-card__img,
-        .lt-card__type,
-        .lt-card__desc {
-            display: none;
-        }
-
-        .lt-card__body {
-            padding: 16px;
-        }
-
-        .lt-card__title {
-            font-size: 1.25rem;
-        }
-
-        /* Thesis exhibit: full-width video only */
-        .lt-thesis {
-            padding: 32px 0 24px;
-            /* 24px below video */
-        }
-
-        .lt-thesis__layout {
-            display: block;
-        }
-
-        .lt-thesis__caption,
-        .lt-thesis__side {
-            display: none;
-        }
+    .lt-title__mobile-s {
+        display: inline;
     }
 
-    /* Update footer for mobile */
+    .lt-learning {
+        padding: 32px 16px;
+        background-color: #f4f5f5;
+    }
+
+    .lt-learning__grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .lt-card {
+        background-color: #d8d8d8;
+        padding: 0;
+    }
+
+    .lt-card__img,
+    .lt-card__type,
+    .lt-card__desc {
+        display: none; /* Hide details on mobile */
+    }
+
+    .lt-card__body {
+        padding: 16px;
+    }
+
+    /* Thesis Mobile */
+    .lt-thesis {
+        padding: 32px 0 24px;
+    }
+
+    .lt-thesis__layout {
+        display: block;
+    }
+
+    .lt-thesis__side,
+    .lt-thesis__caption {
+        display: none; /* Hide side articles and text on mobile */
+    }
+
+    /* Footer Mobile */
     footer {
         display: block;
-        /* Override desktop flex layout */
         padding: 16px;
-        /* 16px padding all around */
         background-color: #fff;
-        /* Ensure white background */
-        text-align: left;
-        /* Align text to the left */
     }
 
-    footer>ul {
-        display: none;
-        /* Hide Terms and Privacy */
-    }
-
-    footer>p {
-        font-size: 0.75rem;
-        /* Small text */
-        color: #7f7f7f;
-        white-space: normal;
-        /* Allow wrapping if screen is very narrow */
+    footer > ul {
+        display: none; /* Hide Terms/Privacy */
     }
 }
-
-/* *********************** */
-/** End of Mobile Section **/
